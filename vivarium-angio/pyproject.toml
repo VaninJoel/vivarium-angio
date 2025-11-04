@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vivarium-angio"
+version = "0.0.1"
+authors = [
+  { name="Joel Vanin", email="jvanin@iu.edu" },
+]
+description = "A Vivarium wrapper for the Angiogenesis simulation."
+readme = "README.md"
+requires-python = ">=3.13"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/joelvanin/vivarium-angio"
+"Bug Tracker" = "https://github.com/joelvanin/vivarium-angio/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vivarium_angio*"]
