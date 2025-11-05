@@ -545,7 +545,7 @@ Contributions are welcome! Please:
 ---
 
 ## License
-[License](./LICENSE)
+[Open Source MIT License](./LICENSE)
 
 
 ---
