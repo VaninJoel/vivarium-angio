@@ -545,8 +545,8 @@ Contributions are welcome! Please:
 ---
 
 ## License
+[License](./LICENSE)
 
-[Your license here]
 
 ---
 
