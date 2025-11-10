@@ -102,23 +102,24 @@ The angiogenesis model simulates endothelial cell (EC) migration and VEGF (Vascu
 
 - Anaconda or Miniconda
 - Python 3.12
-- CompuCell3D 
+- CompuCell3D 4.7.x
+- Vivarium-core 1.0
 
 ### Step 1: Create Isolated Conda Environment
 
 **We strongly recommend using a dedicated conda environment to avoid package conflicts.**
-
 ```bash
-# Create new environment for vivarium-angio
 conda create -n vivarium_angio python=3.12 -y
+```
+```bash
 conda activate vivarium_angio
 ```
 
 ### Step 2: Install CompuCell3D
-
 ```bash
-# Install CC3D via conda (recommended)
 conda install -c conda-forge mamba
+```
+```bash
 mamba install -c conda-forge -c compucell3d compucell3d=4.7.0 -y
 ```
 
@@ -127,29 +128,24 @@ mamba install -c conda-forge -c compucell3d compucell3d=4.7.0 -y
 ### Step 3: Install Vivarium and Dependencies
 
 ```bash
-# Install vivarium
-pip install vivarium-core
-
-# Install required packages
-pip install zarr numpy pandas
+pip install vivarium-core zarr numpy pandas
 ```
 
-### Step 4: Install Vivarium-Angio
-
+### Step 4: Clone and Install Vivarium-Angio
 ```bash
-# Clone or navigate to the vivarium-angio directory
-cd /path/to/vivarium-angio
-
-# Install in development mode
+git clone https://github.com/VaninJoel/vivarium-angio.git
+```
+```bash
+cd vivarium-angio
+```
+```bash
 pip install -e .
 ```
 
 ### Verify Installation
-
 ```bash
 python -c "import vivarium; import cc3d; import zarr; print('✓ All dependencies installed')"
 ```
-
 ---
 
 ## Quick Start
@@ -160,6 +156,8 @@ The main script to run is `run_angiogenesis_parallel.py`, which executes three s
 
 ```bash
 cd experiments
+```
+```bash
 python run_angiogenesis_parallel.py
 ```
 
@@ -370,7 +368,6 @@ print(f"VEGF max: {vegf_field.max():.3f}")
 To avoid concurrent write conflicts on Windows:
 
 ```python
-# In angiogenesis_process.py, modify __init__:
 self.store = f'stores/{self.parameters["exp_name"]}.zarr'
 ```
 
